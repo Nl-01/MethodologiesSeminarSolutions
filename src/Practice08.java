@@ -34,13 +34,22 @@ public class Practice08 extends ConsoleProgram {
 		int resultInARow = 0;
 		for(int i = 0; i < NUM_ROLLS; i++){
 			int currRoll = rgen.nextInt(1, 6);
-			if (currRoll == RESULT_VALUE){
+			
+			//changed this part
+			if(resultInARow == 0 && currRoll == RESULT_VALUE){
 				resultInARow++;
 			}else{
-				resultInARow = 0;
+				if(resultInARow == 1){
+					if(currRoll == RESULT_VALUE){
+						resultInARow++;
+					}else{
+						resultInARow = 0;
+					}
+				}
+				
 			}
 		}
-		return resultInARow >= 2;
+		return resultInARow == 2;
 	}
 
 }
