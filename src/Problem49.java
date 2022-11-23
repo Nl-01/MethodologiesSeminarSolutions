@@ -26,6 +26,7 @@ public class Problem49 extends ConsoleProgram {
 		String str = readLine("Enter num as String: ");
 		while(!isOnlyDigits(str)){
 			println("Not a valid number");
+			str = readLine("Enter num as String: ");
 		}
 		return str;
 	}
